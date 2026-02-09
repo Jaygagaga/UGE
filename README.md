@@ -23,7 +23,7 @@ This progressive approach prevents unstable optimization that can occur when nai
 
 ## Download data
 
-Please download the training data and bechmarks from https://pan.quark.cn/s/c4b059eebab5 and put them into mydata and benchmark folder respectively.
+Please download the training data and bechmarks from https://pan.quark.cn/s/4899208ac1c0 and put them into mydata and benchmark folder respectively.
 
 ## Prerequisites
 
@@ -358,6 +358,7 @@ Results are organized by benchmark folder and query mode for easy analysis.
 - **VLM2Vec**: [Paper](https://arxiv.org/pdf/2507.04590)
 - **PE-GNN**: [Paper](https://arxiv.org/abs/2111.10144) - Positional Encoder Graph Neural Networks for Geographic Data
 - **Swift Framework**: [Documentation](https://github.com/modelscope/swift)
+
 
 
 
