@@ -1,4 +1,5 @@
-# Two-Stage Spatial Vision-Language Model Fine-Tuning
+# UrbanGraphEmbedding
+[Uploading overall.pdf…]()
 
 This repository implements a **two-stage training framework** for learning spatially-aware vision-language model (VLM) embeddings that capture urban spatial relationships beyond visual appearance alone.
 
@@ -18,6 +19,11 @@ We propose a **two-stage training framework** that progressively injects spatial
 2. **Stage 2**: Injects structured spatial knowledge into image representations through a graph encoder that propagates topological and relational information from localized spatial subgraphs
 
 This progressive approach prevents unstable optimization that can occur when naively combining images, text, and spatial graphs during training, as pretrained visual–language representations are sensitive to abrupt or unbalanced updates introduced by an additional modality.
+
+
+## Download data
+
+Please download the training data and bechmarks from https://pan.quark.cn/s/c4b059eebab5 and put them into mydata and benchmark folder respectively.
 
 ## Prerequisites
 
@@ -71,9 +77,7 @@ Stage 1 uses JSONL files with image–text pairs. Each line should contain:
 
 ### Running Stage 1
 
-```bash
-cd examples/train/embedding
-./run_stage1.sh
+```bash examples/train/embedding/run_stage1.sh
 ```
 
 ### Configuration
@@ -165,15 +169,7 @@ Stage 2 uses JSONL files with image–text–graph triplets. Each line should co
 
 ### Running Stage 2
 
-```bash
-cd examples/train/embedding
-./run_stage2.sh
-```
-
-Or with a custom experiment name:
-
-```bash
-./run_stage2.sh --experiment_name "my_stage2_experiment"
+```bash examples/train/embedding/run_stage2.sh
 ```
 
 ### Configuration
@@ -286,8 +282,7 @@ After training, evaluate the learned representations using the benchmark evaluat
 
 ### Running Benchmark Evaluation
 
-```bash
-./run_eval_urban_ranking_multiview.sh
+```bash run_eval_urban_ranking_multiview.sh
 ```
 
 ### Configuration
@@ -301,13 +296,13 @@ Edit `run_eval_urban_ranking_multiview.sh` to customize evaluation settings:
 MODEL_NAME="Qwen/Qwen2.5-VL-7B-Instruct"
 
 # Path to trained checkpoint (from Stage 2 output)
-ADAPTERS_PATH="output/stage2_qwen25vl7b_edge_embed_16/v0-YYYYMMDD-HHMMSS/.../checkpoint-XXXX/"
+ADAPTERS_PATH="output/stage2_qwen25vl7b/v0-YYYYMMDD-HHMMSS/.../checkpoint-XXXX/"
 ```
 
 #### Output Directory (line 31)
 
 ```bash
-OUTPUT_DIR="eval_output/stage2_qwen25vl7b_edge_embed_16"
+OUTPUT_DIR="eval_output/stage2_qwen25vl7b"
 ```
 
 #### Inference Parameters (lines 73-83)
@@ -363,6 +358,5 @@ Results are organized by benchmark folder and query mode for easy analysis.
 - **VLM2Vec**: [Paper](https://arxiv.org/pdf/2507.04590)
 - **PE-GNN**: [Paper](https://arxiv.org/abs/2111.10144) - Positional Encoder Graph Neural Networks for Geographic Data
 - **Swift Framework**: [Documentation](https://github.com/modelscope/swift)
-
 
 
