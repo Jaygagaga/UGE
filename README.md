@@ -27,22 +27,30 @@ Please download the training data and bechmarks from https://pan.quark.cn/s/4899
 
 ## Prerequisites
 
+### System Requirements
+
 - Python 3.10+
 - CUDA-capable GPUs (4 GPUs recommended, 30GB+ VRAM each)
-- DeepSpeed (for distributed training)
-- PyTorch with CUDA support
-- Swift framework dependencies
+- CUDA 12.4+ (for PyTorch CUDA support)
 
-### Environment Setup
+### Python Package Requirements
+
+The following packages are required to run the training and evaluation scripts:
 
 ```bash
-# Set CUDA_HOME if not auto-detected
-export CUDA_HOME=/usr/local/cuda-12.0  # Adjust to your CUDA installation
-
-# Set GPU visibility (adjust based on your setup)
-export CUDA_VISIBLE_DEVICES=0,1,2,3
+torch==2.6.0+cu124
+torch-geometric==2.7.0
+torchaudio==2.6.0+cu124
+torchvision==0.21.0+cu124
+transformers==4.57.3
+qwen-vl-utils==0.0.11
+s2sphere==0.2.5
+modelscope==1.31.0
+deepspeed==0.18.2
+ms-swift==3.10.0
 ```
 
+**Note**: For `ms-swift`, refer to the [official repository](https://github.com/modelscope/ms-swift) for installation instructions and additional dependencies.
 ## Stage 1: Image-Text Alignment with Spatial Reasoning
 
 Stage 1 establishes robust image–text alignment through instruction-conditioned contrastive learning. Spatial awareness is first evoked through textual spatial reasoning cues embedded in the training instructions.
@@ -358,6 +366,7 @@ Results are organized by benchmark folder and query mode for easy analysis.
 - **VLM2Vec**: [Paper](https://arxiv.org/pdf/2507.04590)
 - **PE-GNN**: [Paper](https://arxiv.org/abs/2111.10144) - Positional Encoder Graph Neural Networks for Geographic Data
 - **Swift Framework**: [Documentation](https://github.com/modelscope/swift)
+
 
 
 
