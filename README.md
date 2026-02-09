@@ -1,5 +1,5 @@
 # UrbanGraphEmbedding
-[Uploading overall.pdf…]()
+![Framework overview](overall/pdf)
 
 This repository implements a **two-stage training framework** for learning spatially-aware vision-language model (VLM) embeddings that capture urban spatial relationships beyond visual appearance alone.
 
@@ -358,5 +358,6 @@ Results are organized by benchmark folder and query mode for easy analysis.
 - **VLM2Vec**: [Paper](https://arxiv.org/pdf/2507.04590)
 - **PE-GNN**: [Paper](https://arxiv.org/abs/2111.10144) - Positional Encoder Graph Neural Networks for Geographic Data
 - **Swift Framework**: [Documentation](https://github.com/modelscope/swift)
+
 
 
