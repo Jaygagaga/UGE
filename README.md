@@ -288,7 +288,6 @@ nvcc --version
 
 After training, evaluate the learned representations using the benchmark evaluation script `run_eval_urban_ranking_multiview.sh`. This script runs comprehensive evaluations across multiple benchmark datasets.
 
-### Running Benchmark Evaluation
 
 ```bash run_eval_urban_ranking_multiview.sh
 ```
@@ -366,6 +365,7 @@ Results are organized by benchmark folder and query mode for easy analysis.
 - **VLM2Vec**: [Paper](https://arxiv.org/pdf/2507.04590)
 - **PE-GNN**: [Paper](https://arxiv.org/abs/2111.10144) - Positional Encoder Graph Neural Networks for Geographic Data
 - **Swift Framework**: [Documentation](https://github.com/modelscope/swift)
+
 
 
 
